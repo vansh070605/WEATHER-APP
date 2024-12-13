@@ -41,6 +41,7 @@ This is a simple web application that allows users to get real-time weather upda
 7. Open your browser and visit http://127.0.0.1:5000 to access the app.
 
 ## Directory Structure
+
 india-weather-app/
 │
 ├── app.py                # Flask backend application
