@@ -34,7 +34,7 @@ def get_lat_lon(city_name, state_code, country_code="India", API_key=api_key):
         print(f"Error fetching coordinates: {e}")
         return None, None
 
-def get_current_weather(lat, lon, API_key=api_key):
+def get_current_weather(lat, lon, state_name, API_key=api_key):
     """
     Fetch current weather data using latitude and longitude.
     """
@@ -45,7 +45,7 @@ def get_current_weather(lat, lon, API_key=api_key):
         if resp:
             data = WeatherData(
                 city=resp.get('name'),
-                state="Unknown",  # State info isn't directly available in the API response
+                state=state_name,  # State info isn't directly available in the API response
                 main=resp.get('weather')[0].get('main'),
                 description=resp.get('weather')[0].get('description'),
                 icon=resp.get('weather')[0].get('icon'),
@@ -64,7 +64,7 @@ def main(city_name, state_name, country_name="India"):
     """
     lat, lon = get_lat_lon(city_name, state_name, country_name)
     if lat is not None and lon is not None:
-        weather_data = get_current_weather(lat, lon)
+        weather_data = get_current_weather(lat, lon, state_name)
         return weather_data
     else:
         return None
