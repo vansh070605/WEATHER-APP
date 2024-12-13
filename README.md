@@ -41,7 +41,7 @@ This is a simple web application that allows users to get real-time weather upda
 7. Open your browser and visit http://127.0.0.1:5000 to access the app.
 
 ## Directory Structure
-
+```
 india-weather-app/
 │
 ├── app.py                # Flask backend application
@@ -51,7 +51,8 @@ india-weather-app/
 │   └── style.css         # Custom CSS (if any)
 ├── requirements.txt      # Python dependencies
 └── README.md             # Project documentation
-
+```
+---
 ## How It Works
 1. The user selects a state and city from the dropdown menus.
 2. Upon submitting the form, the Flask app sends a request to the OpenWeather API with the selected city.
